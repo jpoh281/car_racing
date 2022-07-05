@@ -1,8 +1,10 @@
+import 'package:meta/meta.dart';
+
 class InputParser {
   List<String> parseStringToCarNames(String? inputText) {
     _checkEmptyOrNull(inputText);
 
-    List<String> names = _parseByComma(inputText!);
+    List<String> names = parseByComma(inputText!);
 
     for (String name in names) {
       _checkOverFiveWords(name);
@@ -11,7 +13,8 @@ class InputParser {
     return names;
   }
 
-  List<String> _parseByComma(String inputText) {
+  @visibleForTesting
+  List<String> parseByComma(String inputText) {
     return inputText.split(',');
   }
 
