@@ -1,5 +1,8 @@
+import 'package:meta/meta.dart';
+
+@immutable
 class Speed {
   final int value;
 
-  Speed(this.value);
+  const Speed(this.value);
 }

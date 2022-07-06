@@ -1,11 +1,13 @@
-import 'package:car_racing/models/speed_meter.dart';
+import 'package:car_racing/models/speed.dart';
+import 'package:meta/meta.dart';
 
+@immutable
 class OrangeLight {
   final Speed referenceSpeed;
 
-  OrangeLight(this.referenceSpeed);
+  const OrangeLight(this.referenceSpeed);
 
   bool canGo(Speed speed) {
-    return speed.value >= 4;
+    return speed.value >= referenceSpeed.value;
   }
 }
